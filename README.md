@@ -14,7 +14,7 @@
             <snapshots>
                     <enabled>false</enabled>
             </snapshots>
-            <url>https://raw.github.com/agthumoe/easy-rest.git/releases</url>
+            <url>https://raw.github.com/agthumoe/easy-spring.git/releases</url>
     </repository>
     ...
 </repositories>
@@ -25,7 +25,7 @@
     <dependency>
         <groupId>com.achromex</groupId>
         <artifactId>easy-spring</artifactId>
-        <version>1.8.1</version>
+        <version>1.9.0</version>
     </dependency>
 </depencencies>
 ```
