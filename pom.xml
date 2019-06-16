@@ -6,7 +6,7 @@
 
     <groupId>com.achromex</groupId>
     <artifactId>easy-spring</artifactId>
-    <version>1.9.0</version>
+    <version>1.9.1.RELEASE</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -112,7 +112,7 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>easy-spring</id>
+            <id>easy-spring-releases</id>
             <name>Easy Spring</name>
             <url>git:releases://git@github.com:agthumoe/easy-spring.git</url>
         </repository>
