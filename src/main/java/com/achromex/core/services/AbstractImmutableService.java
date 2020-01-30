@@ -24,17 +24,13 @@ import java.util.stream.Collectors;
 public abstract class AbstractImmutableService<T extends DateStampedModel> extends
     AbstractService<T> implements ImmutableService<T> {
 
-    protected DateTimeProvider dateTimeProvider;
-
     /**
      * Construct the service with the relevant repository.
      *
      * @param repository       to be used for this service.
-     * @param dateTimeProvider to provided date and time information for createdDate.
      */
-    public AbstractImmutableService(CoreRepository<T> repository, DateTimeProvider dateTimeProvider) {
+    public AbstractImmutableService(CoreRepository<T> repository) {
         super(repository);
-        this.dateTimeProvider = dateTimeProvider;
     }
 
     /**
@@ -42,7 +38,6 @@ public abstract class AbstractImmutableService<T extends DateStampedModel> exten
      */
     @Override
     public T create(T entity) {
-        entity.setCreatedDate(dateTimeProvider.now());
         return super.create(entity);
     }
 

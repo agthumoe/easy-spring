@@ -25,10 +25,12 @@ public abstract class AbstractMutableService<T extends MutableModel> extends
     AbstractImmutableService<T> implements MutableService<T> {
 
     /**
-     * {@inheritDoc}
+     * Construct the service with the relevant repository.
+     *
+     * @param repository to be used for this service.
      */
-    public AbstractMutableService(CoreRepository<T> repository, DateTimeProvider dateTimeProvider) {
-        super(repository, dateTimeProvider);
+    public AbstractMutableService(CoreRepository<T> repository) {
+        super(repository);
     }
 
     /**
@@ -36,7 +38,6 @@ public abstract class AbstractMutableService<T extends MutableModel> extends
      */
     @Override
     public T create(T entity) {
-        entity.setLastModifiedDate(dateTimeProvider.now());
         return super.create(entity);
     }
 
@@ -53,7 +54,6 @@ public abstract class AbstractMutableService<T extends MutableModel> extends
      */
     @Override
     public T update(T entity) {
-        entity.setLastModifiedDate(dateTimeProvider.now());
         return super.repository.save(entity);
     }
 }

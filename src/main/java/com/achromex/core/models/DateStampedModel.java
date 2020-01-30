@@ -5,8 +5,10 @@
  */
 package com.achromex.core.models;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,7 +27,12 @@ public abstract class DateStampedModel extends Model {
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
+    @Column(name = "created_date", nullable = false, updatable = false)
     private Date createdDate;
+
+    @CreatedBy
+    @Column(name = "created_by", nullable = false, updatable = false)
+    private String createdBy;
 
     public Date getCreatedDate() {
         return createdDate;
@@ -33,5 +40,13 @@ public abstract class DateStampedModel extends Model {
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 }

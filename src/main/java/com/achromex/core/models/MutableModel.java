@@ -5,8 +5,11 @@
  */
 package com.achromex.core.models;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,7 +28,12 @@ public abstract class MutableModel extends DateStampedModel {
 
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
+    @Column(name = "last_modified_date", nullable = false)
     private Date lastModifiedDate;
+
+    @Column(name = "last_modified_by", nullable = false)
+    @LastModifiedBy
+    private String lastModifiedBy;
 
     public Date getLastModifiedDate() {
         return lastModifiedDate;
@@ -33,5 +41,13 @@ public abstract class MutableModel extends DateStampedModel {
 
     public void setLastModifiedDate(Date LastModifiedDate) {
         this.lastModifiedDate = LastModifiedDate;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
     }
 }

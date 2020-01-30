@@ -7,6 +7,7 @@ package com.achromex.core.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Every data model which requires a unique ID should extend this class.
@@ -33,20 +34,14 @@ public abstract class Model implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        final Model model = (Model) o;
-
-        return id != null ? id.equals(model.id) : model.id == null;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Model model = (Model) o;
+        return id.equals(model.id);
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return Objects.hash(id);
     }
 }
