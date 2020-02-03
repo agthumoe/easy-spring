@@ -24,8 +24,14 @@ public abstract class IdentifiableDto implements Serializable {
     @ApiModelProperty(hidden = true)
     private Date lastModifiedDate;
 
+    @ApiModelProperty(hidden = true)
+    private String createdBy;
+
+    @ApiModelProperty(hidden = true)
+    private String lastModifiedBy;
+
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -33,7 +39,7 @@ public abstract class IdentifiableDto implements Serializable {
     }
 
     public Date getCreatedDate() {
-        return createdDate;
+        return this.createdDate;
     }
 
     public void setCreatedDate(Date createdDate) {
@@ -41,10 +47,26 @@ public abstract class IdentifiableDto implements Serializable {
     }
 
     public Date getLastModifiedDate() {
-        return lastModifiedDate;
+        return this.lastModifiedDate;
     }
 
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getLastModifiedBy() {
+        return this.lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
     }
 }
