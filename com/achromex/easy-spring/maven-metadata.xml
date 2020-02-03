@@ -3,7 +3,7 @@
   <groupId>com.achromex</groupId>
   <artifactId>easy-spring</artifactId>
   <versioning>
-    <release>2.0.3.RELEASE</release>
+    <release>2.0.4.RELEASE</release>
     <versions>
       <version>1.9.0</version>
       <version>1.9.1.RELEASE</version>
@@ -11,7 +11,8 @@
       <version>2.0.1.RELEASE</version>
       <version>2.0.2.RELEASE</version>
       <version>2.0.3.RELEASE</version>
+      <version>2.0.4.RELEASE</version>
     </versions>
-    <lastUpdated>20200203160930</lastUpdated>
+    <lastUpdated>20200203162030</lastUpdated>
   </versioning>
 </metadata>
