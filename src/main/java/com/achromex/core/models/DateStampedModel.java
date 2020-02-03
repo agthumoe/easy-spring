@@ -26,11 +26,11 @@ public abstract class DateStampedModel extends Model {
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
-    @Column(name = "created_date")
+    @Column(name = "created_date", nullable = false, updatable = false)
     private Date createdDate;
 
     @CreatedBy
-    @Column(name = "created_by")
+    @Column(name = "created_by", nullable = false, updatable = false)
     private String createdBy;
 
     public Date getCreatedDate() {

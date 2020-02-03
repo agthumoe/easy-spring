@@ -27,10 +27,10 @@ public abstract class MutableModel extends DateStampedModel {
 
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
-    @Column(name = "last_modified_date")
+    @Column(name = "last_modified_date", nullable = false)
     private Date lastModifiedDate;
 
-    @Column(name = "last_modified_by")
+    @Column(name = "last_modified_by", nullable = false)
     @LastModifiedBy
     private String lastModifiedBy;
 
