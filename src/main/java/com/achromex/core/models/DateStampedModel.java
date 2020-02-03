@@ -27,15 +27,15 @@ public abstract class DateStampedModel extends Model {
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
-    @Column(name = "created_date", nullable = false, updatable = false)
+    @Column(name = "created_date")
     private Date createdDate;
 
     @CreatedBy
-    @Column(name = "created_by", nullable = false, updatable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     public Date getCreatedDate() {
-        return createdDate;
+        return this.createdDate;
     }
 
     public void setCreatedDate(Date createdDate) {
@@ -43,7 +43,7 @@ public abstract class DateStampedModel extends Model {
     }
 
     public String getCreatedBy() {
-        return createdBy;
+        return this.createdBy;
     }
 
     public void setCreatedBy(String createdBy) {

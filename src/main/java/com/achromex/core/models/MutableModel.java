@@ -5,7 +5,6 @@
  */
 package com.achromex.core.models;
 
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -28,15 +27,15 @@ public abstract class MutableModel extends DateStampedModel {
 
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
-    @Column(name = "last_modified_date", nullable = false)
+    @Column(name = "last_modified_date")
     private Date lastModifiedDate;
 
-    @Column(name = "last_modified_by", nullable = false)
+    @Column(name = "last_modified_by")
     @LastModifiedBy
     private String lastModifiedBy;
 
     public Date getLastModifiedDate() {
-        return lastModifiedDate;
+        return this.lastModifiedDate;
     }
 
     public void setLastModifiedDate(Date LastModifiedDate) {
@@ -44,7 +43,7 @@ public abstract class MutableModel extends DateStampedModel {
     }
 
     public String getLastModifiedBy() {
-        return lastModifiedBy;
+        return this.lastModifiedBy;
     }
 
     public void setLastModifiedBy(String lastModifiedBy) {
