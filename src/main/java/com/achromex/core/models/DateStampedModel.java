@@ -7,11 +7,9 @@ package com.achromex.core.models;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -21,6 +19,7 @@ import java.util.Date;
  * @since 1.0.0
  */
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class DateStampedModel extends Model {
 
     private static final long serialVersionUID = 5752925653889009095L;
